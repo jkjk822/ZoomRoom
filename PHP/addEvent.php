@@ -5,7 +5,7 @@
 	# main
 	if(!empty($_POST['eventName']) && !empty($_POST['type'])
 	{
-		json_encode(addEvent());
+		addEvent();
 	}
 
 	function addEvent(){
