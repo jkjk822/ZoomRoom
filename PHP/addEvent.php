@@ -3,7 +3,7 @@
 <?php
 
 	# main
-	if(!empty($_POST['eventName']) && !empty($_POST['type'])
+	if(!empty($_POST['name']))
 	{
 		addEvent();
 	}
@@ -12,26 +12,27 @@
 
 		require_once('db_setup.php');
 		$sql = "USE jjaco16;";
-		if ($conn->query($sql) === TRUE) {
-		   // echo "using Database tbiswas2_company";
-		} else {
-		   echo "Error using  database: " . $conn->error;
+		if ($conn->query($sql) !== TRUE) {
+		   die("Error using  database: " . $conn->error);
 		}
 
-		$eventName = get_post($conn, 'eventName');
+		$eventName = get_post($conn, 'name');
 		$host = get_post($conn, 'host');
-		$location = get_post($conn, 'location');
-		$description = get_post($conn, 'description');
-		$startTime = get_post($conn, 'startTime');
-		$endTime = get_post($conn, 'endTime');
-		$type = get_post($conn, 'type');
+		$location = get_post($conn, 'room');
+		$description = get_post($conn, 'desc');
+		$startTime = get_post($conn, 'start');
+		$endTime = get_post($conn, 'end');
 
-		$stmt = $conn->query("INSERT INTO Event VALUES(0, $eventName, $host, $location, $description, $startTime, $endTime, $type)");
+		# set up query and post it to database
+		$stmt = $conn->prepare("INSERT INTO Event VALUES(0, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%dT%h:%m'), STR_TO_DATE(?, '%Y-%m-%dT%h:%m'), 'Other');");
+ 		if(!$stmt) die("Error: " . $conn->error);
+		$stmt->bind_param("ssssss", $eventName, $host, $location, $description, $startTime, $endTime);
+		$stmt->execute();
 
-		if ($stmt === TRUE) {
-			echo "New user created successfully";
+		if ($stmt) {
+			echo "New event created successfully";
 		} else{
-			echo "Error: " . $conn->error;
+			die("Error: " . $conn->error);
 		}
 
 		$conn->close();
