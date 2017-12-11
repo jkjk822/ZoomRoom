@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="css/styles.css">
+	<meta charset="utf-8">
+	<title>Zoom Room - Create Event</title>
+</head>
+
+<body>
+	<h2>Create an event:</h2>
+
+	<form action="submit.php" method="post">
+			<label for="name">Event Name:</label>
+			<input type="text" name="name" id="name" placeholder="Event name">
+		<br><br>
+			<label for="host">Host:</label>
+			<select id="host"> <!-- get options from database -->
+				<option selected disabled value="select">Select host</option>
+				<option value="1">Host 1</option>
+				<option value="2">Host 2</option>
+				<option value="3">Host 3</option>
+			</select>
+		<br><br>
+			<label for="desc">Description:</label>
+			<textarea name="desc" id="desc" placeholder="Description"></textarea>
+		<br><br>
+			<label for="start">Event Begin:</label>
+			<input type="datetime-local" id="start" name="start">
+		<br><br>
+			<label for="end">Event End:</label>
+			<input type="datetime-local" id="end" name="end">
+		<br><br>
+			<label for="room">Room: </label>
+			<select id="room"> <!-- get options from database -->
+				<option selected disabled value="select">Select room</option>
+				<option value="1">Room 1</option>
+				<option value="2">Room 2</option>
+				<option value="3">Room 3</option>
+			</select>
+		<br><br>
+		<input type="submit" value="Submit" class="button">
+	</form>
+
+	<footer>
+		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
+		<p>CSC 261 Fall 2017</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="css/styles.css">
+	<meta charset="utf-8">
+	<title>Zoom Room - Login</title>
+</head>
+
+<body>
+	<h2>Welcome to Zoom Room</h2>
+
+	<a href="view-events.html">View events</a>
+	<br><br>
+	<a href="search-events.html">Search for events</a>
+
+	<h3>Login:</h3>
+
+	<form action="submit.php" onsubmit="return validatePassword()">
+		
+		<label for="username"><strong>Username:</strong></label>
+		<input type="text" name="username" id="username" placeholder="Enter username"><br><br>
+
+		<label for="password"><strong>Password:</strong></label>
+		<input type="password" name="password" id="password" placeholder="Enter password"><br><br>
+
+		<input type="submit" value="Login" class="button"><br><br>
+		
+		<div id="validate"></div>
+	</form>
+
+	<footer>
+		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
+		<p>CSC 261 Fall 2017</p>
+	</footer>
+
+	<script type="text/javascript">
+		function validatePassword() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			submitOK = "true";
+			if (!(username == password)) { //should validate username+password from database
+				document.getElementById("validate").innerHTML = "INCORRECT USERNAME OR PASSWORD."
+				submitOK = "false";
+			} 
+			if (submitOK == "false") { return false; }
+		}
+	</script>
+
+</body>
+</html>
