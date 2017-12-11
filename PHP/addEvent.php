@@ -24,7 +24,7 @@
 		$endTime = get_post($conn, 'end');
 
 		# set up query and post it to database
-		$stmt = $conn->prepare("INSERT INTO Event VALUES(0, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%dT%h:%m'), STR_TO_DATE(?, '%Y-%m-%dT%h:%m'), 'Other');");
+		$stmt = $conn->prepare("INSERT INTO Event VALUES(0, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), 'Other');");
  		if(!$stmt) die("Error: " . $conn->error);
 		$stmt->bind_param("ssssss", $eventName, $host, $location, $description, $startTime, $endTime);
 		$stmt->execute();
