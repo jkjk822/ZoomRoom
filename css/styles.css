@@ -1,0 +1,48 @@
+body { 
+	background-color: #f5fffa;
+	font-family: Arial, Helveltica, sans-serif;
+}
+
+table { 
+	table-layout: fixed;
+	border-collapse: collapse; 
+	width: 100%;
+}
+
+th, td { 
+	position: relative;
+	padding: 10px 20px 10px 20px;
+	text-align: left;
+	vertical-align: top;
+}
+
+th { background-color: white; }
+
+tr:hover, figcaption:hover { background-color: white; }
+
+.button {
+	background-color: #008cba;
+	border: none;
+	color: white;
+	padding: 3px;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.button:hover {	box-shadow: 0 0 2px 1px silver; }
+
+footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+footer p {
+	font-size: 8pt;
+	line-height: 50%;
+	text-align: right;
+	margin: 10px;
+}
+
+h2:first-child { margin: 2px 0 20px; }
