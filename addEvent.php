@@ -3,17 +3,19 @@
 	# main
 	if(!empty($_POST['name']))
 	{
+		$data = array();
+		$errors = array();
 		echo json_encode(addEvent());
 	}
 
 	function addEvent(){
-		$data = array();
-		$errors = array();
+		global $data;
+		global $errors;
 
 		require_once('db_setup.php');
 		$sql = "USE jjaco16;";
 		if ($conn->query($sql) !== TRUE) {
-		   databaseError($conn->error);
+		   return databaseError($conn->error);
 		}
 
 		$eventName = get_post($conn, 'name');
@@ -38,12 +40,12 @@
 
 		# set up query and post it to database
 		$stmt = $conn->prepare("INSERT INTO Event VALUES(0, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), 'Other');");
- 		if(!$stmt) databaseError($conn->error);
+ 		if(!$stmt) return databaseError($conn->error);
 		$stmt->bind_param("ssssss", $eventName, $host, $location, $description, $startTime, $endTime);
 		$stmt->execute();
 
 		if (!$stmt) {
-			databaseError($conn->error);
+			return databaseError($conn->error);
 		}
 		$stmt->close();
 		$conn->close();
@@ -55,7 +57,7 @@
     function databaseError($error){
         $errors['database'] = $error;
         $data['errors'] = $errors;
-        return $data;
+        return false;
     }
 
 	function get_post($database, $var){
@@ -67,7 +69,7 @@
 
         # set up query and post it to database
         $stmt = $database->prepare("SELECT $fieldName FROM $table WHERE $fieldName = ?");
-        if(!$stmt) databaseError($database->error);
+        if(!$stmt) return databaseError($database->error);
         $stmt->bind_param("s", $fieldValue);
         $stmt->execute();
         $stmt->store_result();
