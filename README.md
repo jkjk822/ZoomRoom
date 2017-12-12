@@ -22,12 +22,12 @@
 
 
 Johnny:
-- Populate manage event
-- Populate manage account
+- Populate manage event 
+- Populate manage account (done)
 - Authenticate user (done)
 - Save event to database (done)
 - Update/delete event 
-- Update account
+- Update account (done)
 - Search database
 
 Mcvvina:
