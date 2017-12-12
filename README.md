@@ -22,6 +22,8 @@
 
 
 Johnny:
+- Populate manage event
+- Populate manage account
 - Authenticate user (done)
 - Save event to database (done)
 - Update/delete event 
@@ -29,6 +31,8 @@ Johnny:
 - Search database
 
 Mcvvina:
+- Add my events page
+- Add office to manage account
 - Style/rework nav/logout/unathorized pages
 - Login page (done)
 - Create event (done)
