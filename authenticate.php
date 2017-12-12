@@ -3,7 +3,7 @@
 	# main
 	if(!empty($_POST['username']) && !empty($_POST['password'])){
 		if(authenticate($_POST['username'], $_POST['password']))
-			header('Location: show_relations.html');
+			header('Location: view-events.html');
 		else
 			echo "Username or password is incorrect!";
 
