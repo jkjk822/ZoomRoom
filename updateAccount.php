@@ -1,11 +1,12 @@
 <?php
 	
 	# main
+	$data = array();
+	$errors = array();
 	echo json_encode(updateAccount());
 
 	function updateAccount(){
-		$data = array();
-		$errors = array();
+		global $data;
 
 		require_once('db_setup.php');
 		$sql = "USE jjaco16;";
@@ -30,9 +31,11 @@
 	}
 
     function databaseError($error){
+    	global $errors;
+    	global $data;
         $errors['database'] = $error;
         $data['errors'] = $errors;
-        return $data;
+        return false;
     }
 
 	function get_post($database, $var){
@@ -63,7 +66,7 @@
 			$stmt->execute();
 
 			if (!$stmt) {
-				databaseError($conn->error);
+				return databaseError($conn->error);
 			}
 			$stmt->close();
 			return true;
