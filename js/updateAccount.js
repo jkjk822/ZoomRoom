@@ -66,6 +66,12 @@ function update() {
 	var confirm = $("#confirm-pass").value;
 	var email = $("#new-email").value;
 	var phone = $("#new-phone").value;
+	console.log(current);
+	console.log(newPass);
+	console.log(confirm);
+	console.log(email);
+	console.log(phone);
+
 	if (newPass !== confirm) {
 		$("#match-error").text = "passwords do not match";
 		return false;
