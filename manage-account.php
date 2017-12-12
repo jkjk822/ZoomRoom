@@ -19,9 +19,7 @@
 	$stmt->execute();
 
 	#store result
-	$stmt->store_result();
-	$result = $stmt->get_result();
-	$stmt->fetch();
+	$result = $stmt->get_result()->fetch_assoc();
 
 	# cleanup
 	$stmt->close();
@@ -59,11 +57,11 @@
 		<span id="match-error" class="error"></span>
 
 	<h3>Change Your Email:</h3>
-		<label for="new-email">New email:</label>
+		<label for="new-email">Email:</label>
 		<input type="email" name="new-email" id="new-email" placeholder="<?php echo htmlspecialchars($result['email']) ?>"><br><br>
 
 	<h3>Change Your Phone Number:</h3>
-		<label for="new-phone">New phone number:</label>
+		<label for="new-phone">Phone number:</label>
 		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>"><br><br>
 		<span id="phone-error" class="error"></span>
 

@@ -7,7 +7,8 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 			$('input').removeClass('has-error'); // clear error coloring on input
 			$('.error').text(""); // clear error text
 
-			if(!update) return;
+			event.preventDefault();
+			console.log(update());
 
 			// get data from form
 			var formData = $(this).serialize();
@@ -65,7 +66,7 @@ function update() {
 	var confirm = $("#confirm-pass").value;
 	var email = $("#new-email").value;
 	var phone = $("#new-phone").value;
-	if (newPass !=== confirm) {
+	if (newPass !== confirm) {
 		$("#match-error").text = "passwords do not match";
 		return false;
 	}
