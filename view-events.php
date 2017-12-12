@@ -26,22 +26,23 @@
 	<table>
 		<tr>
 			<th>Event Name</th>
-			<th>Date &amp; Time</th>
+			<th>Starts</th>
+			<th>Ends</th>
 			<th>Room</th>
 			<th>Host</th>
 			<th>Description</th>
+			<th>Type</th>
 		</tr>
 <?php
 	while($row = $result->fetch_assoc()){
 ?>
     	<tr>
-	    	<td><?php echo $row['eventID']?></td>
 			<td><?php echo $row['eventName']?></td>
-			<td><?php echo $row['host']?></td>
-			<td><?php echo $row['location']?></td>
-			<td><?php echo $row['description']?></td>
 			<td><?php echo $row['startTime']?></td>
 			<td><?php echo $row['endTime']?></td>
+			<td><?php echo $row['location']?></td>
+			<td><?php echo $row['host']?></td>
+			<td><?php echo $row['description']?></td>
 			<td><?php echo $row['type']?></td>
       	</tr>
 
