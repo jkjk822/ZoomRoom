@@ -46,15 +46,15 @@
 	<h3>Change Your Password:</h3>
 		
 		<label for="current-pass">Current Password:</label>
-		<input type="password" name="current-pass" id="current-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"><br><br>
-		<span id="password-error" class="error"></span>
+		<input type="password" name="current-pass" id="current-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+		<span id="password-error" class="error"></span><br><br>
 
 		<label for="new-pass">New Password:</label>
 		<input type="password" name="new-pass" id="new-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"><br><br>
 
 		<label for="confirm-pass">Confirm New Password:</label>
-		<input type="password" name="confirm-pass" id="confirm-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"><br><br>
-		<span id="match-error" class="error"></span>
+		<input type="password" name="confirm-pass" id="confirm-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+		<span id="match-error" class="error"></span><br><br>
 
 	<h3>Change Your Email:</h3>
 		<label for="new-email">Email:</label>
@@ -62,8 +62,8 @@
 
 	<h3>Change Your Phone Number:</h3>
 		<label for="new-phone">Phone number:</label>
-		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>"><br><br>
-		<span id="phone-error" class="error"></span>
+		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>">
+		<span id="phone-error" class="error"></span><br><br>
 
 		<input type="submit" value="Update profile" class="button"><br><br>
 	</form>

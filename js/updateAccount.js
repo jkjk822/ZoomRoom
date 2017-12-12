@@ -9,7 +9,9 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
  
 			// stop the form from submitting the normal way and refreshing the page
 			event.preventDefault();
-			if(!update()) return;		
+
+			//client side validation
+			if(!validate()) return;
 
 			// get data from form
 			var formData = $(this).serialize();
@@ -58,7 +60,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 
 });
 
-function update() {
+function validate() {
 	var current = $("#current-pass").val();
 	var newPass = $("#new-pass").val();
 	var confirm = $("#confirm-pass").val();
@@ -70,7 +72,7 @@ function update() {
 		return false;
 	}
 	var phoneFormat= "\(\d{3}\)-\d{3}-\d{4}$";
-	if (!(phone.match(phoneFormat))) {
+	if (phone && !(phone.match(phoneFormat))) {
 		$("#phone-error").text("invalid phone format");
 		return false;
 	}
