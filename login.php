@@ -42,7 +42,7 @@
 <?php
 	if($_COOKIE["loggedIn"]){
 		#Redirect browser
-		header("Location: view-events.html"); 
+		header("Location: view-events.php"); 
 		exit();
 	}
 ?>

@@ -9,6 +9,7 @@
 </head>
 
 <body>
+	<?php include 'inc/nav.php'; ?>
 	<h2>All Events</h2>
 
 <?php
