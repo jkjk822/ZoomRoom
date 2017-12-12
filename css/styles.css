@@ -54,3 +54,8 @@ tr td:last-child { font-size: 9pt; }
 	font-size: 15pt;
 	font-weight: bold;
 }
+
+.navbar {
+	width: 100%;
+	border-bottom: 1px solid black;
+}
