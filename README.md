@@ -22,7 +22,6 @@
 
 
 Johnny:
-PHP
 - Authenticate user (done)
 - Save event to database (done)
 - Update/delete event 
@@ -30,7 +29,7 @@ PHP
 - Search database
 
 Mcvvina:
-Html
+- Style/rework nav/logout/unathorized pages
 - Login page (done)
 - Create event (done)
 - Manage/delete event
