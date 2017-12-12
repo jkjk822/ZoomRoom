@@ -49,8 +49,11 @@ h2:first-child { margin: 2px 0 20px; }
 
 tr td:last-child { font-size: 9pt; }
 
-.error, #message {
+.error {
 	color: red;
+}
+
+#message {
 	font-size: 15pt;
 	font-weight: bold;
 }
