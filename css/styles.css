@@ -48,3 +48,9 @@ footer p {
 h2:first-child { margin: 2px 0 20px; }
 
 tr td:last-child { font-size: 9pt; }
+
+.error, #message {
+	color: red;
+	font-size: 15pt;
+	font-weight: bold;
+}
