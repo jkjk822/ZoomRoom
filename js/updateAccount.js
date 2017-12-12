@@ -6,9 +6,10 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 			$('#message').text(""); // clear message text
 			$('input').removeClass('has-error'); // clear error coloring on input
 			$('.error').text(""); // clear error text
-
+ 
+			// stop the form from submitting the normal way and refreshing the page
 			event.preventDefault();
-			console.log(update());
+			if(!update()) return;		
 
 			// get data from form
 			var formData = $(this).serialize();
@@ -53,32 +54,24 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 						$('#message').html(data.message);
 					}
 				}).fail(function(error){console.log(error);});
-
-			// stop the form from submitting the normal way and refreshing the page
-			event.preventDefault();
 		});
 
 });
 
 function update() {
-	var current = $("#current-pass").value;
-	var newPass = $("#new-pass").value;
-	var confirm = $("#confirm-pass").value;
-	var email = $("#new-email").value;
-	var phone = $("#new-phone").value;
-	console.log(current);
-	console.log(newPass);
-	console.log(confirm);
-	console.log(email);
-	console.log(phone);
+	var current = $("#current-pass").val();
+	var newPass = $("#new-pass").val();
+	var confirm = $("#confirm-pass").val();
+	var email = $("#new-email").val();
+	var phone = $("#new-phone").val();
 
 	if (newPass !== confirm) {
-		$("#match-error").text = "passwords do not match";
+		$("#match-error").text("passwords do not match");
 		return false;
 	}
 	var phoneFormat= "\(\d{3}\)-\d{3}-\d{4}$";
 	if (!(phone.match(phoneFormat))) {
-		$("#phone-error") = "invalid phone format";
+		$("#phone-error").text("invalid phone format");
 		return false;
 	}
 	return true;
