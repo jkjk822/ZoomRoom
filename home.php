@@ -19,7 +19,7 @@
 	<br><br>
 	<a href="my-events.php">My events</a>
 	<br><br>
-	<a href="create-event.html">Create event</a>
+	<a href="create-event.php">Create event</a>
 	<br><br>
 	<a href="manage-event.php">Manage event</a>
 	<br><br>
