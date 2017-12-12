@@ -10,7 +10,7 @@
 		require_once('db_setup.php');
 		$sql = "USE jjaco16;";
 		if ($conn->query($sql) !== TRUE) {
-		   databaseError($conn->error);
+		   return databaseError($conn->error);
 		}
 
 		if(!empty($_POST['current-pass'])
@@ -18,21 +18,14 @@
 			&& !empty($_POST['confirm-pass'])
 			&& ($_POST['new-pass'] === $_POST['confirm-pass']))
 		{
-			updatePassword($conn, get_post($conn, 'current-pass'), get_post($conn, 'confirm-pass'));
+			$data['password'] = updatePassword($conn, get_post($conn, 'current-pass'), get_post($conn, 'confirm-pass'));
 		}
 		if(!empty($_POST['new-email'])){
-			updateEmail($conn, get_post($conn, 'new-email'));
+			$data['email'] = updateEmail($conn, get_post($conn, 'new-email'));
 		}
 		if(!empty($_POST['new-phone'])){
-			updatePhone($conn, get_post($conn, 'new-phone'));
+			$data['phone'] = updatePhone($conn, get_post($conn, 'new-phone'));
 		}
-		if(!empty($errors)){
-			$data['errors'] = $errors;
-			$conn->close();
-			return $data;
-		}
-		# set up query and post it to database
-		
 		return $data;
 	}
 
@@ -50,7 +43,7 @@
 	
 		# set up query and post it to database
 		$stmt = $conn->prepare("SELECT password FROM User WHERE netID = ?;");
-		if(!$stmt) databaseError($conn->error);
+		if(!$stmt) return databaseError($conn->error);
 		$stmt->bind_param("s", $_COOKIE['loggedIn']);
 		$stmt->execute();
 
@@ -65,7 +58,7 @@
 		# verify password
 		if($result === $password){
 			$stmt = $conn->prepare("UPDATE User SET password = ? WHERE netID = ?;");
-	 		if(!$stmt) databaseError($conn->error);
+	 		if(!$stmt) return databaseError($conn->error);
 			$stmt->bind_param("ss", $newPassword, $_COOKIE['loggedIn']);
 			$stmt->execute();
 
@@ -73,37 +66,37 @@
 				databaseError($conn->error);
 			}
 			$stmt->close();
-			$data['password'] = true;
+			return true;
 		}
 		else {
-			$errors['password'] = true;
+			return false;
 		}
 	}
 
 	function updateEmail($conn, $email){
 		$stmt = $conn->prepare("UPDATE User SET email = ? WHERE netID = ?;");
- 		if(!$stmt) databaseError($conn->error);
+ 		if(!$stmt) return databaseError($conn->error);
 		$stmt->bind_param("ss", $email, $_COOKIE['loggedIn']);
 		$stmt->execute();
 
 		if (!$stmt) {
-			databaseError($conn->error);
+			return databaseError($conn->error);
 		}
 		$stmt->close();
-		$data['email'] = true;
+		return true;
 	}
 
 	function updatePhone($conn, $phone){
 		$stmt = $conn->prepare("UPDATE User SET phone = ? WHERE netID = ?;");
- 		if(!$stmt) databaseError($conn->error);
+ 		if(!$stmt) return databaseError($conn->error);
 		$stmt->bind_param("ss", $phone, $_COOKIE['loggedIn']);
 		$stmt->execute();
 
 		if (!$stmt) {
-			databaseError($conn->error);
+			return databaseError($conn->error);
 		}
 		$stmt->close();
-		$data['phone'] = true;
+		return true;
 	}
 
 ?>
