@@ -34,7 +34,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 						}
 
 						// handle errors for host
-						if (data.errors.room) {
+						if (data.errors.host) {
 							// add the error class to show red input
 							$('input[name=host]').addClass('has-error'); 
 							// add the actual error message under our input
