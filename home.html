@@ -9,22 +9,23 @@
 </head>
 
 <body>
-	<h2>Welcome, User</h2> <!-- should show username -->
+	<?php include 'inc/nav.php'; ?>
+	<h2>Welcome<?php if($_COOKIE["loggedIn"]){echo ", {$_COOKIE['loggedIn']}"} ?></h2>
 
-	<a href="view-events.html">View events</a>
+	<a href="view-events.php">View events</a>
 	<br><br>
-	<a href="search-events.html">Search for events</a>
+	<a href="search-events.php">Search for events</a>
+	<?php if($_COOKIE["loggedIn"]){ ?>
+	<br><br>
+	<a href="my-events.php">My events</a>
 	<br><br>
 	<a href="create-event.html">Create event</a>
 	<br><br>
-	<a href="manage-event.html">Manage event</a>
+	<a href="manage-event.php">Manage event</a>
 	<br><br>
-	<a href="manage-account.html">Manage account</a>
+	<a href="manage-account.php">Manage account</a>
 	<br><br>
-
-	<form action="login.html" method="POST">
-		<input type="submit" value="Log Out" class="button"><br><br>
-	</form>
+	<?php } ?>
 
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
