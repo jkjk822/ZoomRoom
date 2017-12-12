@@ -9,6 +9,7 @@
 </head>
 
 <body>
+	<?php include 'inc/nav.php'; ?>
 	<h2>Manage Your Account</h2>
 
 	<form onsubmit="return update()" method="POST">
@@ -35,12 +36,6 @@
 	</form>
 	
 	<div id="validate"></div>
-
-	<p>Logged in as: User<!-- should get username from database --></p>
-
-	<form action="login.html" method="POST">
-		<input type="submit" value="Log Out" class="button">
-	</form>
 
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
