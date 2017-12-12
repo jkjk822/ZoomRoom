@@ -30,21 +30,30 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 
 					console.log(data);
 					// if database error
-					if (data.errors.database){
+					if (data.errors && data.errors.database){
 						console.log(data.errors.database);
-						$("#message").text("Database Error");
+						$("p.error").text("Database Error");
 					} else {
 						var msg = [];
 						if(data.password){
 							msg.push("password");
+							$("#current-pass").val("");
+							$("#new-pass").val("");
+							$("#confirm-pass").val("");
 						} else {
 							// add the error class to show red input
 							$('input[name=current-pass]').addClass('has-error'); 
 							// add the actual error message under our input
 							$('#password-error').text("incorrect password");
 						}
-						if(data.email) msg.push("email");
-						if(data.phone) msg.push("phone");
+						if(data.email){
+							msg.push("email");
+							$("#new-email").val("");
+						}
+						if(data.phone){
+							msg.push("phone");
+							$("#new-phone").val("");
+						}
 
 						if(msg.length == 1) $('#message').html("Updated " + msg[0] + " successfully!");
 						else if (msg.length == 2) $('#message').html("Updated " + msg[0] + " and " + msg[1] + " successfully!");

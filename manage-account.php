@@ -68,6 +68,9 @@
 		<input type="submit" value="Update profile" class="button"><br><br>
 	</form>
 
+    <p id="message"></p>
+    <p class="error"></p>
+    
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
 		<p>CSC 261 Fall 2017</p>
