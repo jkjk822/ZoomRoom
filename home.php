@@ -10,7 +10,7 @@
 
 <body>
 	<?php include 'inc/nav.php'; ?>
-	<h2>Welcome<?php if($_COOKIE["loggedIn"]){echo ", {$_COOKIE['loggedIn']}"} ?></h2>
+	<h2>Welcome<?php if($_COOKIE["loggedIn"]) echo ", {$_COOKIE['loggedIn']}" ?></h2>
 
 	<a href="view-events.php">View events</a>
 	<br><br>
