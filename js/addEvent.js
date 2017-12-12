@@ -33,6 +33,14 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 							$('#room-error').text(data.errors.room);
 						}
 
+						// handle errors for host
+						if (data.errors.room) {
+							// add the error class to show red input
+							$('input[name=host]').addClass('has-error'); 
+							// add the actual error message under our input
+							$('#host-error').text(data.errors.host);
+						}
+
 						if (data.errors.database){
 							console.log(data.errors.database);
 							$("p.error").text("Database Error");
