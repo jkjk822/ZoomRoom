@@ -9,9 +9,10 @@
 </head>
 
 <body>
+	<?php include 'inc/nav.php'; ?>
 	<h2>Welcome to Zoom Room</h2>
 
-	<a href="view-events.html">View events</a>
+	<a href="view-events.php">View events</a>
 	<br><br>
 	<a href="search-events.html">Search for events</a>
 
