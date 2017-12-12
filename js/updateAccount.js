@@ -31,20 +31,12 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 					console.log(data);
 					// if database error
 					if(data.errors){
-						// handle errors for room
-						if (data.errors.room) {
+						// handle errors for password
+						if (data.errors.password) {
 							// add the error class to show red input
-							$('input[name=room]').addClass('has-error'); 
+							$('input[name=current-pass]').addClass('has-error'); 
 							// add the actual error message under our input
-							$('#room-error').text(data.errors.room);
-						}
-
-						// handle errors for host
-						if (data.errors.host) {
-							// add the error class to show red input
-							$('input[name=host]').addClass('has-error'); 
-							// add the actual error message under our input
-							$('#host-error').text(data.errors.host);
+							$('#password-error').text("incorrect password");
 						}
 
 						if (data.errors.database){
@@ -53,7 +45,14 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 						}
 
 					} else { // account created
-						$('#message').html(data.message);
+						var msg = [];
+						if(data.password) msg.push("password");
+						if(data.email) msg.push("email");
+						if(data.phone) msg.push("phone");
+
+						if(msg.length == 1) $('#message').html("Updated " + msg[0] + " successfully!");
+						else if (msg.length == 2) $('#message').html("Updated " + msg[0] + " and " + msg[1] + " successfully!");
+						else if (msg.length == 3) $('#message').html("Updated " + msg[0] + ", " + msg[1] + ", and " + msg[2] + " successfully!");
 					}
 				}).fail(function(error){console.log(error);});
 		});
