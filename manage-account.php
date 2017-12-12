@@ -1,8 +1,40 @@
 <!doctype html>
 
+<?php	
+	# Redirect to login page if not logged in
+	if(!$_COOKIE['loggedIn']){
+		# Redirect browser
+		header('Location: unauthorized.html'); 
+		exit();
+	}
+
+	require_once('db_setup.php');
+    $sql = "USE jjaco16;";
+    if ($conn->query($sql) !== TRUE) die("Error using  database: " . $conn->error);
+	
+	# set up query and post it to database
+	$stmt = $conn->prepare("SELECT * FROM User WHERE netID = ?;");
+	if(!$stmt) die("Error: " . $conn->error);
+	$stmt->bind_param("s", $_COOKIE['loggedIn']);
+	$stmt->execute();
+
+	#store result
+	$stmt->store_result();
+	$result = $stmt->get_result();
+	$stmt->fetch();
+
+	# cleanup
+	$stmt->close();
+	$conn->close();
+?>
+
+
+
 <html lang="en">
 
 <head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/updateAccount.js"></script>
 	<link rel="stylesheet" href="css/styles.css">
 	<meta charset="utf-8">
 	<title>Zoom Room - Manage Account</title>
@@ -12,69 +44,35 @@
 	<?php include 'inc/nav.php'; ?>
 	<h2>Manage Your Account</h2>
 
-	<form onsubmit="return update()" method="POST">
+	<form action="updateAccount.php" method="POST">
 	<h3>Change Your Password:</h3>
 		
 		<label for="current-pass">Current Password:</label>
 		<input type="password" name="current-pass" id="current-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"><br><br>
+		<span id="password-error" class="error"></span>
 
 		<label for="new-pass">New Password:</label>
 		<input type="password" name="new-pass" id="new-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"><br><br>
 
 		<label for="confirm-pass">Confirm New Password:</label>
 		<input type="password" name="confirm-pass" id="confirm-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"><br><br>
+		<span id="match-error" class="error"></span>
 
 	<h3>Change Your Email:</h3>
 		<label for="new-email">New email:</label>
-		<input type="email" name="new-email" id="new-email" placeholder="email@xyz.com"><br><br>
+		<input type="email" name="new-email" id="new-email" placeholder="<?php echo htmlspecialchars($result['email']) ?>"><br><br>
 
 	<h3>Change Your Phone Number:</h3>
 		<label for="new-phone">New phone number:</label>
-		<input type="tel" name="new-phone" id="new-phone" placeholder="(123)-456-7890"><br><br>
+		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>"><br><br>
+		<span id="phone-error" class="error"></span>
 
 		<input type="submit" value="Update profile" class="button"><br><br>
 	</form>
-	
-	<div id="validate"></div>
 
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
 		<p>CSC 261 Fall 2017</p>
 	</footer>
-
-	<script type="text/javascript">
-		function update() {
-			var current = document.getElementById("current-pass").value;
-			var newPass = document.getElementById("new-pass").value;
-			var confirm = document.getElementById("confirm-pass").value;
-			var email = document.getElementById("new-email").value;
-			var phone = document.getElementById("new-phone").value;
-			submitOK = "true";
-			if (!(newPass == confirm)) {
-				document.getElementById("validate").innerHTML = "PASSWORDS DO NOT MATCH."
-				submitOK = "false";
-			} else if (current == "false") { /*should cross-reference current password from database*/
-				document.getElementById("validate").innerHTML = "INCORRECT CURRENT PASSWORD."
-				submitOK = "false";
-			}
-			if (submitOK == "false") { return false; }
-			else {
-				var phoneFormat= "\(\d{3}\)-\d{3}-\d{4}$";
-				if (!(phone.match(phoneFormat))) {
-					alert("phone format does not match");
-					submitOK = "false";
-				}
-			}
-		}
-	</script>
 </body>
 </html>
-
-<?php 	
-	# Redirect to login page if not logged in
-	if(!$_COOKIE['loggedIn']){
-		# Redirect browser
-		header('Location: unauthorized.html'); 
-		exit();
-	}
-?>
