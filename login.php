@@ -9,13 +9,6 @@
 </head>
 
 <body>
-	<?php include 'inc/nav.php'; ?>
-	<h2>Welcome to Zoom Room</h2>
-
-	<a href="view-events.php">View events</a>
-	<br><br>
-	<a href="search-events.html">Search for events</a>
-
 	<h3>Login:</h3>
 
 	<form action="authenticate.php" method="post">
@@ -42,7 +35,7 @@
 <?php
 	if($_COOKIE["loggedIn"]){
 		#Redirect browser
-		header("Location: view-events.php"); 
+		header("Location: home.php"); 
 		exit();
 	}
 ?>

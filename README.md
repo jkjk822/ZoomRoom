@@ -31,7 +31,7 @@ PHP
 
 Mcvvina:
 Html
-- Login page
+- Login page (done)
 - Create event (done)
 - Manage/delete event
 - View events (no login)
