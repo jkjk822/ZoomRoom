@@ -67,7 +67,7 @@
 
 	<h3>Update Your Office:</h3>
 		<label for="office">Office:</label>
-		<input type="text" name="office" id="office" placeholder="FETCH from DATABASE"><br><br>
+		<input type="text" name="office" id="office" placeholder="<?php echo htmlspecialchars($result['office']) ?>"><br><br>
 
 		<input type="submit" value="Update profile" class="button"><br><br>
 	</form>
