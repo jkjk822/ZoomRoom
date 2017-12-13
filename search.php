@@ -26,7 +26,34 @@
 		</div><!-- search-for -->
 
 		<br>
-		
+
+		<div id="search-by">
+			<a>Search by:</a>
+
+			<select>
+				<option value="event-name">Name</option>
+				<option value="event-starts">Starts</option>
+				<option value="event-ends">Ends</option>
+				<option value="event-room">Room</option>
+				<option value="event-host">Host</option>
+				<option value="event-type">Type</option>
+			</select>
+
+			<select>
+				<option value="staff-name">Name</option>
+				<option value="staff-phone">Phone Number</option>
+				<option value="staff-office">Office</option>
+			</select>
+			
+			<select>
+				<option value="host-name">Name</option>
+				<option value="host-email">Email</option>
+				<option value="host-phone">Phone Number</option>
+			</select>
+		</div><!-- search-by -->
+
+		<br>
+
 		<input type="search" name="user-input">
 		<input type="submit" value="Search" class="button">
 	</form>
