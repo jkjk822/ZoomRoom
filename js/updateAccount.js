@@ -70,7 +70,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 						else if (successful.length == 2) $('#message').html("Updated " + successful[0] + " and " + successful[1] + " successfully!");
 						else if (successful.length >= 3){
 							var msg = "Updated ";
-							for(int i = 0; i < successful.length-1; i++)
+							for(var i = 0; i < successful.length-1; i++)
 								msg += successful[i] + ", ";
 							msg += "and " + successful[successful.length-1] + " successfully!";
 							$('#message').html(msg);
