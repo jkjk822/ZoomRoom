@@ -26,9 +26,9 @@
 - View 20 events/users/hosts at a time - view-events & search
 
 Johnny:
-- Populate my events
-- Populate manage event 
-- Populate manage account (done) - fetch office from database
+- Populate my events (done)
+- Populate/authenticate manage event 
+- Populate manage account (done)
 - Authenticate user (done)
 - Save event to database (done)
 - Update/delete event 
