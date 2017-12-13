@@ -139,9 +139,7 @@ nav ul li {
 	margin-right: 10px;
 }
 
-.search-bar-radio input {
-	display: none;
-}
+.search-bar-radio input { display: none; }
 
 .search-bar-radio label span {
 	vertical-align: middle;
@@ -168,4 +166,28 @@ nav ul li {
 
 /* ------------ Dropdown menu ------------ */
 
+.search-bar-dropdown { 
+	display: block; 
+	position: relative;
+	padding-top: 15px;
+}
 
+.search-bar-dropdown select {
+	background-color: #008cba;
+	appearance: none;
+	outline: 0;
+	border: 0;
+	box-shadow: none;
+	cursor: pointer;
+	height: 30px;
+	width: 120px;
+	color: white;
+	padding-left: 7px;
+}
+
+.search-bar-dropdown select option { background-color: #778899; }
+
+.search-bar-dropdown input {
+	height: 30px;
+	min-width: 55px;
+}

@@ -32,6 +32,7 @@
 				<a>Search by:</a>
 
 				<select>
+					<option selected="true" disabled="disabled">Event</option>
 					<option value="event-name">Name</option>
 					<option value="event-starts">Starts</option>
 					<option value="event-ends">Ends</option>
@@ -42,6 +43,7 @@
 				</select>
 
 				<select>
+					<option selected="true" disabled="disabled">User</option>
 					<option value="user-name">Name</option>
 					<option value="user-department">Department</option>
 					<option value="user-office">Office</option>
@@ -51,6 +53,7 @@
 				</select>
 
 				<select>
+					<option selected="true" disabled="disabled">Room</option>
 					<option value="room-building">Building</option>
 					<option value="room-capacity">Capacity</option>
 					<option value="room-id">Room ID</option>
