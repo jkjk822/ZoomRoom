@@ -19,8 +19,10 @@
 - Link to user from event
 - Link to room from user
 - Show departments for users
-- Sort events on view all events page
+- Sort events on view-events page
 - Confirm delete/update account/events
+- Telephone validation
+- Individual pages for each event, link from view-events
 
 
 Johnny:
@@ -33,7 +35,7 @@ Johnny:
 - Search database
 
 Mcvvina:
-- Add my events page
+- Add my events page (done)
 - Add office to manage account (done)
 - Style/rework nav/logout/unathorized pages (done)
 - Login page (done)
