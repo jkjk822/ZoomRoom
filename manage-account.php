@@ -62,7 +62,7 @@
 
 	<h3>Update Your Phone Number:</h3>
 		<label for="new-phone">Phone number:</label>
-		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>">
+		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>" pattern="\(\d{3}\)-\d{3}-\d{4}$">
 		<span id="phone-error" class="error"></span><br><br>
 
 	<h3>Update Your Office:</h3>

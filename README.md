@@ -21,7 +21,6 @@
 - Show departments for users
 - Sort events on view-events page
 - Confirm delete/update account/events
-- Telephone validation
 - Individual pages for each event, link from view-events
 
 
@@ -44,3 +43,4 @@ Mcvvina:
 - View events - no login (done)
 - Manage user account (done)
 - Search page with 1 example result per type [event,user,room]
+- Telephone validation (done)

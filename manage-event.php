@@ -16,8 +16,11 @@
 		<label for="event-name">Event Name:</label>
 		<input type="text" name="event-name" id="event-name" value="GRAB VALUE FROM DATABASE"><br><br>
 
-		<label for="date-time">Date & Time:</label>
-		<input type="datetime-local" name="date-time" id="date-time" value="2017-12-11T19:40"><br><br><!-- GRAB VALUE FROM DATABASE -->
+		<label for="datetime-start">Starts:</label>
+		<input type="datetime-local" name="datetime-start" id="datetime-start" value="2017-12-11T19:40"><br><br><!-- GRAB VALUE FROM DATABASE -->
+
+		<label for="datetime-end">Ends:</label>
+		<input type="datetime-local" name="datetime-end" id="datetime-end" value="2017-12-11T19:40"><br><br><!-- GRAB VALUE FROM DATABASE -->
 
 		<label for="room">Room:</label>
 		<input type="text" name="room" id="room" value="GRAB VALUE FROM DATABASE"><br><br>
