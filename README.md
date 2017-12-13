@@ -32,8 +32,8 @@ Johnny:
 
 Mcvvina:
 - Add my events page
-- Add office to manage account
-- Style/rework nav/logout/unathorized pages
+- Add office to manage account (done)
+- Style/rework nav/logout/unathorized pages (done)
 - Login page (done)
 - Create event (done)
 - Manage/delete event
