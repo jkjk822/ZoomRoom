@@ -13,7 +13,7 @@
 	<h2>Search for events, users, or rooms:</h2>
 
 	<form method="post">
-		<div id="search-for">
+		<div id="search-for" class="search-bars">
 			<a>Search for:</a>
 			<input type="radio" id="event" name="type" value="event">
 			<label for="event">Event</label>
@@ -27,7 +27,7 @@
 
 		<br>
 
-		<div id="search-by">
+		<div id="search-by" class="search-bars">
 			<a>Search by:</a>
 
 			<select>

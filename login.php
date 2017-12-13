@@ -20,8 +20,6 @@
 		<input type="password" name="password" id="password" placeholder="Enter password" required><br><br>
 
 		<input type="submit" value="Login" class="button"><br><br>
-		
-		<div id="validate"></div>
 	</form>
 
 	<footer>

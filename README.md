@@ -22,11 +22,13 @@
 - Sort events on view-events page
 - Confirm delete/update account/events
 - Individual pages for each event, link from view-events
-
+- Link/logo to home page
+- View 20 events/users/hosts at a time - view-events & search
 
 Johnny:
+- Populate my events
 - Populate manage event 
-- Populate manage account (done)
+- Populate manage account (done) - fetch office from database
 - Authenticate user (done)
 - Save event to database (done)
 - Update/delete event 
