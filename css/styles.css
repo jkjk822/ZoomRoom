@@ -1,7 +1,26 @@
+/* ------------ Housekeeping ------------ */
+
 body { 
 	background-color: #f5fffa;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+footer {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+footer p {
+	font-size: 8pt;
+	line-height: 50%;
+	text-align: right;
+	margin: 10px;
+}
+
+h2:first-child { margin: 2px 0 20px; }
+
+/* ------------ Table ------------ */
 
 table { 
 	table-layout: fixed;
@@ -20,6 +39,8 @@ th { background-color: white; }
 
 tr:hover, figcaption:hover { background-color: white; }
 
+/* ------------ Submit button ------------ */
+
 .button {
 	background-color: #008cba;
 	border: none;
@@ -32,20 +53,7 @@ tr:hover, figcaption:hover { background-color: white; }
 
 .button:hover {	box-shadow: 0 0 2px 1px silver; }
 
-footer {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-}
-
-footer p {
-	font-size: 8pt;
-	line-height: 50%;
-	text-align: right;
-	margin: 10px;
-}
-
-h2:first-child { margin: 2px 0 20px; }
+/* ------------ Error message ------------ */
 
 .error { color: red; }
 
@@ -53,6 +61,8 @@ h2:first-child { margin: 2px 0 20px; }
 	font-size: 15pt;
 	font-weight: bold;
 }
+
+/* ------------ Navigation bar (login/logout) ------------ */
 
 .navbar {
 	position: absolute;
@@ -83,6 +93,8 @@ nav ul li {
 	color: blue;	
 }
 
+/* ------------ Warning box ------------ */
+
 #unauthorized, #login {
 	display: flex;
 	justify-content: center;
@@ -107,6 +119,8 @@ nav ul li {
 
 .logout{ margin-bottom: 15px; }
 
+/* ------------ Search bars ------------ */
+
 .search-bars {
 	background-color: #afeeee;
 	left:0;
@@ -114,6 +128,8 @@ nav ul li {
 	padding: 15px;
 	margin: auto;
 }
+
+/* ------------ Radio buttons ------------ */
 
 .search-bar-radio { display: inline-block; }
 
@@ -149,3 +165,7 @@ nav ul li {
 	background-color: #778899;
 	box-shadow: 0 0 0 2px #008cba;
 }
+
+/* ------------ Dropdown menu ------------ */
+
+
