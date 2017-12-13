@@ -31,12 +31,6 @@
 	
 	<div id="validate"></div>
 
-	<p>Logged in as: User<!-- should get username from database --></p>
-
-	<form action="login.html" method="POST">
-		<input type="submit" value="Log Out" class="button">
-	</form>
-
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
 		<p>CSC 261 Fall 2017</p>

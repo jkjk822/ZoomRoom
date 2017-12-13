@@ -47,11 +47,7 @@ footer p {
 
 h2:first-child { margin: 2px 0 20px; }
 
-tr td:last-child { font-size: 9pt; }
-
-.error {
-	color: red;
-}
+.error { color: red; }
 
 #message {
 	font-size: 15pt;
@@ -100,19 +96,13 @@ nav ul li {
 	margin: auto;
 }
 
-.box h1 {
-	margin: 15px; 
-}
+.box h1 { margin: 15px; }
 
-.center {
-	text-align: center;
-}
+.center { text-align: center; }
 
 .restricted {
 	font-size: 20px;
 	margin-bottom: 15px;
 }
 
-.logout{
-	margin-bottom: 15px;
-}
+.logout{ margin-bottom: 15px; }
