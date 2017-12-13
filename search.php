@@ -17,13 +17,13 @@
 			<div class="search-bar-radio">
 				<a>Search for:</a>
 				<input type="radio" id="event" name="type" value="event" checked="checked">
-				<label for="event">Event</label>
+				<label for="event"><span></span>Event</label>
 
 				<input type="radio" id="user" name="type" value="user">
-				<label for="user">User</label>
+				<label for="user"><span></span>User</label>
 
 				<input type="radio" id="room" name="type" value="room">
-				<label for="room">Room</label>
+				<label for="room"><span></span>Room</label>
 			</div><!-- search-bar-radio -->
 
 			<br>

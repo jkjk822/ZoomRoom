@@ -108,13 +108,44 @@ nav ul li {
 .logout{ margin-bottom: 15px; }
 
 .search-bars {
-	background-color: #778899;
+	background-color: #afeeee;
 	left:0;
 	right: 0;
 	padding: 15px;
 	margin: auto;
 }
 
-.search-bar-radio label {
+.search-bar-radio { display: inline-block; }
+
+.search-bar-radio label { 
+	cursor: pointer; 
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.search-bar-radio input {
+	display: none;
+}
+
+.search-bar-radio label span {
+	vertical-align: middle;
 	cursor: pointer;
+	display: inline-block;
+	height: 17px;
+	width: 17px;
+	background-color: #008cba;
+	border-radius: 50%;
+	margin: 8px;
+	box-shadow: 0 0 0 2px #008cba;
+}
+
+.search-bar-radio label:hover span {
+	background-color: #778899;
+}
+
+.search-bar-radio input:checked + label span {
+	height: 17px;
+	width: 17px;
+	background-color: #778899;
+	box-shadow: 0 0 0 2px #008cba;
 }
