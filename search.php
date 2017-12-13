@@ -83,9 +83,13 @@
 			<td>Type 5</td>
 		</tr>
 		<tr>
-			<td>Cooler Event</td>
+			<td>Featured Speaker</td>
 			<td>Monday 11/13, 5:00 PM</td>
+			<td>Monday 11/13, 6:00 PM</td>
 			<td>CSB 703</td>
+			<td>Data Science Department</td>
+			<td>Seminar on featured speaker</td>
+			<td>Presentation</td>
 		</tr>
 	</table>
 

@@ -1,6 +1,6 @@
 body { 
 	background-color: #f5fffa;
-	font-family: Arial, Helveltica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 table { 
@@ -33,7 +33,7 @@ tr:hover, figcaption:hover { background-color: white; }
 .button:hover {	box-shadow: 0 0 2px 1px silver; }
 
 footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	right: 0;
 }
@@ -106,3 +106,5 @@ nav ul li {
 }
 
 .logout{ margin-bottom: 15px; }
+
+
