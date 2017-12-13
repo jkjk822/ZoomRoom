@@ -14,7 +14,7 @@
 
 	<a href="view-events.php">View events</a>
 	<br><br>
-	<a href="search-events.php">Search for events</a>
+	<a href="search.php">Search for events</a>
 	<?php if($_COOKIE["loggedIn"]){ ?>
 	<br><br>
 	<a href="my-events.php">My events</a>
