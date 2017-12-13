@@ -34,30 +34,47 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 						console.log(data.errors.database);
 						$("p.error").text("Database Error");
 					} else {
-						var msg = [];
+						var successful = [];
 						if(data.password){
-							msg.push("password");
+							successful.push("password");
 							$("#current-pass").val("");
 							$("#new-pass").val("");
 							$("#confirm-pass").val("");
-						} else {
+						}
+						if(data.password === false){
 							// add the error class to show red input
 							$('input[name=current-pass]').addClass('has-error'); 
 							// add the actual error message under our input
 							$('#password-error').text("incorrect password");
 						}
 						if(data.email){
-							msg.push("email");
+							successful.push("email");
 							$("#new-email").val("");
 						}
 						if(data.phone){
-							msg.push("phone");
+							successful.push("phone");
 							$("#new-phone").val("");
 						}
+						if(data.office){
+							successful.push("office");
+							$("#office").val("");
+						}
+						if(data.office === false){
+							// add the error class to show red input
+							$('input[name=office]').addClass('has-error'); 
+							// add the actual error message under our input
+							$('#office-error').text("invalid room (use cdcs format)");
+						}
 
-						if(msg.length == 1) $('#message').html("Updated " + msg[0] + " successfully!");
-						else if (msg.length == 2) $('#message').html("Updated " + msg[0] + " and " + msg[1] + " successfully!");
-						else if (msg.length == 3) $('#message').html("Updated " + msg[0] + ", " + msg[1] + ", and " + msg[2] + " successfully!");
+						if(successful.length == 1) $('#message').html("Updated " + successful[0] + " successfully!");
+						else if (successful.length == 2) $('#message').html("Updated " + successful[0] + " and " + successful[1] + " successfully!");
+						else if (successful.length >= 3){
+							var msg = "Updated ";
+							for(int i = 0; i < successful.length-1; i++)
+								msg += successful[i] + ", ";
+							msg += "and " + successful[successful.length-1] + " successfully!";
+							$('#message').html(msg);
+						}
 					}					
 					
 				}).fail(function(error){console.log(error);});
@@ -74,11 +91,6 @@ function validate() {
 
 	if (newPass !== confirm) {
 		$("#match-error").text("passwords do not match");
-		return false;
-	}
-	var phoneFormat= "\(\d{3}\)-\d{3}-\d{4}$";
-	if (phone && !(phone.match(phoneFormat))) {
-		$("#phone-error").text("invalid phone format");
 		return false;
 	}
 	return true;

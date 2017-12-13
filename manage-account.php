@@ -62,12 +62,12 @@
 
 	<h3>Update Your Phone Number:</h3>
 		<label for="new-phone">Phone number:</label>
-		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>" pattern="\(\d{3}\)-\d{3}-\d{4}$">
-		<span id="phone-error" class="error"></span><br><br>
+		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>" pattern="\(\d{3}\)-\d{3}-\d{4}$"><br><br>
 
 	<h3>Update Your Office:</h3>
 		<label for="office">Office:</label>
-		<input type="text" name="office" id="office" placeholder="<?php echo htmlspecialchars($result['office']) ?>"><br><br>
+		<input type="text" name="office" id="office" placeholder="<?php echo htmlspecialchars($result['office']) ?>">
+		<span id="office-error" class="error"></span><br><br>
 
 		<input type="submit" value="Update profile" class="button"><br><br>
 	</form>

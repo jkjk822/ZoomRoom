@@ -27,6 +27,9 @@
 		if(!empty($_POST['new-phone'])){
 			$data['phone'] = updatePhone($conn, get_post($conn, 'new-phone'));
 		}
+		if(!empty($_POST['office'])){
+			$data['office'] = updateOffice($conn, get_post($conn, 'office'));
+		}
 		return $data;
 	}
 
@@ -100,6 +103,40 @@
 		}
 		$stmt->close();
 		return true;
+	}
+
+	function updateOffice($conn, $office){
+	
+		# set up query and post it to database
+		$stmt = $conn->prepare("SELECT roomID FROM Room WHERE roomID = ?;");
+		if(!$stmt) return databaseError($conn->error);
+		$stmt->bind_param("s", $_COOKIE['loggedIn']);
+		$stmt->execute();
+
+		#store result
+		$stmt->store_result();
+		$stmt->bind_result($result);
+		$stmt->fetch();
+
+		# cleanup
+		$stmt->close();
+		
+		# verify office exists
+		if($result){
+			$stmt = $conn->prepare("UPDATE User SET office = ? WHERE netID = ?;");
+	 		if(!$stmt) return databaseError($conn->error);
+			$stmt->bind_param("ss", $office, $_COOKIE['loggedIn']);
+			$stmt->execute();
+
+			if (!$stmt) {
+				return databaseError($conn->error);
+			}
+			$stmt->close();
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 ?>
