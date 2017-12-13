@@ -19,6 +19,8 @@
 - Link to user from event
 - Link to room from user
 - Show departments for users
+- Sort events on view all events page
+- Confirm delete/update account/events
 
 
 Johnny:
@@ -36,7 +38,7 @@ Mcvvina:
 - Style/rework nav/logout/unathorized pages (done)
 - Login page (done)
 - Create event (done)
-- Manage/delete event
-- View events (no login)
-- Manage user account
-- Search page (with 1 example result per type [event,user,room])
+- Manage/delete event (done)
+- View events - no login (done)
+- Manage user account (done)
+- Search page with 1 example result per type [event,user,room]
