@@ -110,7 +110,7 @@
 		# set up query and post it to database
 		$stmt = $conn->prepare("SELECT roomID FROM Room WHERE roomID = ?;");
 		if(!$stmt) return databaseError($conn->error);
-		$stmt->bind_param("s", $_COOKIE['loggedIn']);
+		$stmt->bind_param("s", $office);
 		$stmt->execute();
 
 		#store result
