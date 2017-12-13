@@ -10,7 +10,7 @@
 
 <body>
 	<?php include 'inc/nav.php'; ?>
-	<h2>Search for events, staff, or hosts:</h2>
+	<h2>Search for events, users, or rooms:</h2>
 
 	<form method="post">
 		<div id="search-for">
@@ -18,11 +18,11 @@
 			<input type="radio" id="event" name="type" value="event">
 			<label for="event">Event</label>
 
-			<input type="radio" id="staff" name="type" value="staff">
-			<label for="staff">Staff</label>
+			<input type="radio" id="user" name="type" value="user">
+			<label for="user">User</label>
 
-			<input type="radio" id="host" name="type" value="host">
-			<label for="host">Host</label>
+			<input type="radio" id="room" name="type" value="room">
+			<label for="room">Room</label>
 		</div><!-- search-for -->
 
 		<br>
@@ -37,18 +37,22 @@
 				<option value="event-room">Room</option>
 				<option value="event-host">Host</option>
 				<option value="event-type">Type</option>
+				<option value="event-id">Event ID</option>
 			</select>
 
 			<select>
-				<option value="staff-name">Name</option>
-				<option value="staff-phone">Phone Number</option>
-				<option value="staff-office">Office</option>
+				<option value="user-name">Name</option>
+				<option value="user-department">Department</option>
+				<option value="user-office">Office</option>
+				<option value="user-phone">Phone Number</option>
+				<option value="user-email">Email</option>
+				<option value="user-netid">netID</option>
 			</select>
-			
+
 			<select>
-				<option value="host-name">Name</option>
-				<option value="host-email">Email</option>
-				<option value="host-phone">Phone Number</option>
+				<option value="room-building">Building</option>
+				<option value="room-capacity">Capacity</option>
+				<option value="room-id">Room ID</option>
 			</select>
 		</div><!-- search-by -->
 
@@ -89,19 +93,22 @@
 
 	<table>
 		<tr>
-			<th>Staff</th>
+			<th>User</th>
 			<th>Phone Number</th>
+			<th>Email</th>
 			<th>Office</th>
 		</tr>
 		<tr>
-			<td>Tamal Biswas</td>
-			<td>585-275-9499</td>
-			<td>Wegmans 2107</td>
+			<td>UR SA</td>
+			<td>Unlisted</td>
+			<td>sa@u.rochester.edu</td>
+			<td>585-273-3333</td>
 		</tr>
 		<tr>
-			<td>Other Guy</td>
+			<td>Robotics Club</td>
 			<td>Unlisted</td>
-			<td>Wegmans Basement</td>
+			<td>robo@u.rochester.edu</td>
+			<td>585-453-2343</td>
 		</tr>
 	</table>
 
@@ -109,19 +116,24 @@
 
 	<table>
 		<tr>
-			<th>Host</th>
-			<th>Email</th>
-			<th>Phone Number</th>
+			<th>Building</th>
+			<th>Room Number</th>
+			<th>Capacity</th>
 		</tr>
 		<tr>
-			<td>UR SA</td>
-			<td>sa@u.rochester.edu</td>
-			<td>585-273-3333</td>
+			<td>Wegmans</td>
+			<td>2107</td>
+			<td>20</td>
 		</tr>
 		<tr>
-			<td>Robotics Club</td>
-			<td>robo@u.rochester.edu</td>
-			<td>585-453-2343</td>
+			<td>Wegmans</td>
+			<td>1400</td>
+			<td>150</td>
+		</tr>
+		<tr>
+			<td>Gavett</td>
+			<td>301</td>
+			<td>50</td>
 		</tr>
 	</table>
 
