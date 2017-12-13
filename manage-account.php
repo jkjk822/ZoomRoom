@@ -56,14 +56,18 @@
 		<input type="password" name="confirm-pass" id="confirm-pass" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
 		<span id="match-error" class="error"></span><br><br>
 
-	<h3>Change Your Email:</h3>
+	<h3>Update Your Email:</h3>
 		<label for="new-email">Email:</label>
 		<input type="email" name="new-email" id="new-email" placeholder="<?php echo htmlspecialchars($result['email']) ?>"><br><br>
 
-	<h3>Change Your Phone Number:</h3>
+	<h3>Update Your Phone Number:</h3>
 		<label for="new-phone">Phone number:</label>
 		<input type="tel" name="new-phone" id="new-phone" placeholder="<?php echo htmlspecialchars($result['phone']) ?>">
 		<span id="phone-error" class="error"></span><br><br>
+
+	<h3>Update Your Office:</h3>
+		<label for="office">Office:</label>
+		<input type="text" name="office" id="office" placeholder="FETCH from DATABASE"><br><br>
 
 		<input type="submit" value="Update profile" class="button"><br><br>
 	</form>
