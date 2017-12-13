@@ -13,6 +13,20 @@
 	<h2>Search for events, staff, or hosts:</h2>
 
 	<form method="post">
+		<div id="search-for">
+			<a>Search for:</a>
+			<input type="radio" id="event" name="type" value="event">
+			<label for="event">Event</label>
+
+			<input type="radio" id="staff" name="type" value="staff">
+			<label for="staff">Staff</label>
+
+			<input type="radio" id="host" name="type" value="host">
+			<label for="host">Host</label>
+		</div><!-- search-for -->
+
+		<br>
+		
 		<input type="search" name="user-input">
 		<input type="submit" value="Search" class="button">
 	</form>
