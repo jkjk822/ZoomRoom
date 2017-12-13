@@ -13,53 +13,53 @@
 	<h2>Search for events, users, or rooms:</h2>
 
 	<form method="post">
-		<div id="search-for" class="search-bars">
-			<a>Search for:</a>
-			<input type="radio" id="event" name="type" value="event">
-			<label for="event">Event</label>
+		<div class="search-bars">
+			<div class="search-bar-radio">
+				<a>Search for:</a>
+				<input type="radio" id="event" name="type" value="event" checked="checked">
+				<label for="event">Event</label>
 
-			<input type="radio" id="user" name="type" value="user">
-			<label for="user">User</label>
+				<input type="radio" id="user" name="type" value="user">
+				<label for="user">User</label>
 
-			<input type="radio" id="room" name="type" value="room">
-			<label for="room">Room</label>
-		</div><!-- search-for -->
+				<input type="radio" id="room" name="type" value="room">
+				<label for="room">Room</label>
+			</div><!-- search-bar-radio -->
 
-		<br>
+			<br>
 
-		<div id="search-by" class="search-bars">
-			<a>Search by:</a>
+			<div class="search-bar-dropdown">
+				<a>Search by:</a>
 
-			<select>
-				<option value="event-name">Name</option>
-				<option value="event-starts">Starts</option>
-				<option value="event-ends">Ends</option>
-				<option value="event-room">Room</option>
-				<option value="event-host">Host</option>
-				<option value="event-type">Type</option>
-				<option value="event-id">Event ID</option>
-			</select>
+				<select>
+					<option value="event-name">Name</option>
+					<option value="event-starts">Starts</option>
+					<option value="event-ends">Ends</option>
+					<option value="event-room">Room</option>
+					<option value="event-host">Host</option>
+					<option value="event-type">Type</option>
+					<option value="event-id">Event ID</option>
+				</select>
 
-			<select>
-				<option value="user-name">Name</option>
-				<option value="user-department">Department</option>
-				<option value="user-office">Office</option>
-				<option value="user-phone">Phone Number</option>
-				<option value="user-email">Email</option>
-				<option value="user-netid">netID</option>
-			</select>
+				<select>
+					<option value="user-name">Name</option>
+					<option value="user-department">Department</option>
+					<option value="user-office">Office</option>
+					<option value="user-phone">Phone Number</option>
+					<option value="user-email">Email</option>
+					<option value="user-netid">netID</option>
+				</select>
 
-			<select>
-				<option value="room-building">Building</option>
-				<option value="room-capacity">Capacity</option>
-				<option value="room-id">Room ID</option>
-			</select>
-		</div><!-- search-by -->
+				<select>
+					<option value="room-building">Building</option>
+					<option value="room-capacity">Capacity</option>
+					<option value="room-id">Room ID</option>
+				</select>
 
-		<br>
-
-		<input type="search" name="user-input">
-		<input type="submit" value="Search" class="button">
+				<input type="search" name="user-input">
+				<input type="submit" value="Search" class="button">
+			</div><!-- search-bar-dropdown -->
+		</div><!-- search-bars -->
 	</form>
 
 	<br><br>

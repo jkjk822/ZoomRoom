@@ -107,4 +107,14 @@ nav ul li {
 
 .logout{ margin-bottom: 15px; }
 
+.search-bars {
+	background-color: #778899;
+	left:0;
+	right: 0;
+	padding: 15px;
+	margin: auto;
+}
 
+.search-bar-radio label {
+	cursor: pointer;
+}
