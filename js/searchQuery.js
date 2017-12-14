@@ -9,21 +9,21 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 		$('label[for=event']).click(function(){
 			selected = 'Event';
 			console.log(selected);
-			this.show();
+			$(this).show();
 			$('#user-dropdown').hide();
 			$('#room-dropdown').hide();
 		});
 		$('label[for=user']).click(function(){
 			selected = 'User';
 			console.log(selected);
-			this.show();
+			$(this).show();
 			$('#event-dropdown').hide();
 			$('#room-dropdown').hide();
 		});
 		$('label[for=room']).click(function(){
 			selected = 'Room';
 			console.log(selected);
-			this.show();
+			$(this).show();
 			$('#event-dropdown').hide();
 			$('#user-dropdown').hide();
 		});
