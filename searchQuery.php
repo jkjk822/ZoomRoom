@@ -29,11 +29,18 @@
 		$stmt->execute();
 
 		#store result
-		$data['result'] = $stmt->get_result();
+		$result = $stmt->get_result();
+		$results = array();
+		$i = 0;
+		while($row = $result->fetch_assoc()){
+			$results[i] = $row;
+			i++;
+		}
 
 		$stmt->close();
 		$conn->close();
 
+		$data['results'] = $results;
 		return $data;
 	}
 
