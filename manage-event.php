@@ -30,7 +30,7 @@
 <html lang="en">
 
 <head>
-	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="css/styles.css">
 	<meta charset="utf-8">
 	<title>Zoom Room - Manage Event</title>
 </head>
