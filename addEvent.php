@@ -64,7 +64,7 @@
     function isValid($database, $fieldValue){
 
         # set up query and post it to database
-        $stmt = $database->prepare("SELECT roomID FROM Room WHERE $fieldName = ?");
+        $stmt = $database->prepare("SELECT roomID FROM Room WHERE roomID = ?");
         if(!$stmt) return databaseError($database->error);
         $stmt->bind_param("s", $fieldValue);
         $stmt->execute();
