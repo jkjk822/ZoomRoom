@@ -37,7 +37,7 @@
 
 <body>
 	<?php include 'inc/nav.php'; ?>
-	<h2>Manage Event #12345</h2>
+	<h2>Manage Event #<?php echo $result['eventID'] ?></h2>
 
 <?php
 	if($result['host'] === $_COOKIE['loggedIn']){
