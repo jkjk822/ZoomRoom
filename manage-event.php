@@ -30,7 +30,7 @@
 <html lang="en">
 
 <head>
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="../css/styles.css">
 	<meta charset="utf-8">
 	<title>Zoom Room - Manage Event</title>
 </head>
@@ -61,15 +61,13 @@
 		<input type="submit" value="Update event" class="button">
 		<input type="submit" value="Delete event" class="button"><br><br>
 	</form>
-	
-	<p id="message">
 
+	<p id="message"></p>
 <?php
 	} else{
-		echo "This is not your event to manage.";
+		echo "<p id='message'>This is not your event to manage.</p>";
 	}
 ?>
-	</p>
 
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
