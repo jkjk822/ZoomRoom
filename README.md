@@ -29,9 +29,9 @@ Johnny:
 - Populate manage account (done)
 - Authenticate user (done)
 - Save event to database (done)
-- Update/delete event 
+- Update/delete event (done)
 - Update account (done)
-- Search database
+- Search database (done)
 
 Mcvvina:
 - Add my events page (done)
