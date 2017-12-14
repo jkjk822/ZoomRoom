@@ -23,7 +23,7 @@
 
 		$stmt = $conn->prepare("UPDATE Event SET eventName = ?, location = ?, description = ?, startTime = STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), endTime = STR_TO_DATE(?, '%Y-%m-%dT%H:%i') WHERE eventID = ?;");
  		if(!$stmt) die($conn->error);
-		$stmt->bind_param("sssss", $eventName, $location, $description, $startTime, $endTime, $event);
+		$stmt->bind_param("ssssss", $eventName, $location, $description, $startTime, $endTime, $event);
 		$stmt->execute();
 
 		if (!$stmt) {
