@@ -65,7 +65,7 @@
 	</form>
 
 	<br><br>
-	<table>
+	<table id="event-table">
 		<tr>
 			<th>Event Name</th>
 			<th>Starts</th>
@@ -75,71 +75,21 @@
 			<th>Description</th>
 			<th>Type</th>
 		</tr>
-		<tr>
-			<td>Event 1</td>
-			<td>Start time</td>
-			<td>End time</td>
-			<td>Room 2</td>
-			<td>Host 3</td>
-			<td>Description 4</td>
-			<td>Type 5</td>
-		</tr>
-		<tr>
-			<td>Featured Speaker</td>
-			<td>Monday 11/13, 5:00 PM</td>
-			<td>Monday 11/13, 6:00 PM</td>
-			<td>CSB 703</td>
-			<td>Data Science Department</td>
-			<td>Seminar on featured speaker</td>
-			<td>Presentation</td>
-		</tr>
 	</table>
 
-	<br>
-
-	<table>
+	<table id="user-table">
 		<tr>
 			<th>User</th>
 			<th>Phone Number</th>
 			<th>Email</th>
 			<th>Office</th>
 		</tr>
-		<tr>
-			<td>UR SA</td>
-			<td>Unlisted</td>
-			<td>sa@u.rochester.edu</td>
-			<td>585-273-3333</td>
-		</tr>
-		<tr>
-			<td>Robotics Club</td>
-			<td>Unlisted</td>
-			<td>robo@u.rochester.edu</td>
-			<td>585-453-2343</td>
-		</tr>
 	</table>
 
-	<br>
-
-	<table>
+	<table id="room-table">
 		<tr>
 			<th>Building</th>
 			<th>Room Number</th>
-			<th>Capacity</th>
-		</tr>
-		<tr>
-			<td>Wegmans</td>
-			<td>2107</td>
-			<td>20</td>
-		</tr>
-		<tr>
-			<td>Wegmans</td>
-			<td>1400</td>
-			<td>150</td>
-		</tr>
-		<tr>
-			<td>Gavett</td>
-			<td>301</td>
-			<td>50</td>
 		</tr>
 	</table>
 

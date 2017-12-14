@@ -60,6 +60,24 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 				.done(function(data) { //on ajax success
 
 					console.log(data);
+
+					if(data.errors){}
+
+					if(data.results){
+						for(var i = 0; i < data.results.length; i++){
+							$("#"+selected.toLowerCase()+"-table").append([
+							"<tr>",
+								"<td>"+results[i].eventName+"</td>",
+								"<td>"+results[i].startTime+"</td>",
+								"<td>"+results[i].endTime+"</td>",
+								"<td>"+results[i].location+"</td>",
+								"<td>"+results[i].host+"</td>",
+								"<td>"+results[i].type+"</td>",
+							"</tr>",
+							].join("\n")
+							);
+						}
+					}
 					
 				}).fail(function(error){console.log(error);});
 		});
