@@ -42,7 +42,7 @@
 <?php
 	if($result['host'] === $_COOKIE['loggedIn']){
 ?>
-	<form action="update-event.php" method="POST">
+	<form action="updateEvent.php" method="POST">
 		<label for="event-name">Event Name:</label>
 		<input type="text" name="event-name" id="event-name" value="<?php echo htmlspecialchars($result['eventName']) ?>"><br><br>
 

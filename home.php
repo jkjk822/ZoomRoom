@@ -21,8 +21,6 @@
 	<br><br>
 	<a href="create-event.php">Create event</a>
 	<br><br>
-	<a href="manage-event.php">Manage event</a>
-	<br><br>
 	<a href="manage-account.php">Manage account</a>
 	<br><br>
 	<?php } ?>
