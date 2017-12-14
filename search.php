@@ -3,6 +3,9 @@
 <html lang="en">
 
 <head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/searchQuery.js"></script>
+
 	<link rel="stylesheet" href="css/styles.css">
 	<meta charset="utf-8">
 	<title>Zoom Room - Search Events</title>
@@ -12,17 +15,17 @@
 	<?php include 'inc/nav.php'; ?>
 	<h2>Search for events, users, or rooms:</h2>
 
-	<form method="post">
+	<form action="searchQuery.php" method="post">
 		<div class="search-bars">
 			<div class="search-bar-radio">
 				<a>Search for:</a>
-				<input type="radio" id="event" name="type" value="event" checked="checked">
+				<input type="radio" id="event-radio" name="type" value="event" checked="checked">
 				<label for="event"><span></span>Event</label>
 
-				<input type="radio" id="user" name="type" value="user">
+				<input type="radio" id="user-radio" name="type" value="user">
 				<label for="user"><span></span>User</label>
 
-				<input type="radio" id="room" name="type" value="room">
+				<input type="radio" id="room-radio" name="type" value="room">
 				<label for="room"><span></span>Room</label>
 			</div><!-- search-bar-radio -->
 
@@ -31,8 +34,7 @@
 			<div class="search-bar-dropdown">
 				<a>Search by:</a>
 
-				<select>
-					<option selected="true" disabled="disabled">Event</option>
+				<select id="event-dropdown">
 					<option value="event-name">Name</option>
 					<option value="event-starts">Starts</option>
 					<option value="event-ends">Ends</option>
@@ -42,8 +44,7 @@
 					<option value="event-id">Event ID</option>
 				</select>
 
-				<select>
-					<option selected="true" disabled="disabled">User</option>
+				<select id="user-dropdown">
 					<option value="user-name">Name</option>
 					<option value="user-department">Department</option>
 					<option value="user-office">Office</option>
@@ -52,8 +53,7 @@
 					<option value="user-netid">netID</option>
 				</select>
 
-				<select>
-					<option selected="true" disabled="disabled">Room</option>
+				<select id="room-dropdown">
 					<option value="room-building">Building</option>
 					<option value="room-capacity">Capacity</option>
 					<option value="room-id">Room ID</option>
