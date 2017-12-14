@@ -37,7 +37,7 @@
 
 <body>
 	<?php include 'inc/nav.php'; ?>
-	<h2>Manage Event #<?php echo $result['eventID'] ?></h2>
+	<h2>Manage Event #<?php echo $_GET['event'] ?></h2>
 
 <?php
 	if($result['host'] === $_COOKIE['loggedIn']){
@@ -62,14 +62,14 @@
 		<input type="submit" value="Delete event" class="button"><br><br>
 	</form>
 	
-	<div id="message">
+	<p id="message">
 
 <?php
 	} else{
 		echo "This is not your event to manage.";
 	}
 ?>
-	</div>
+	</p>
 
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
