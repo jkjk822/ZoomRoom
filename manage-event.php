@@ -44,22 +44,28 @@
 ?>
 	<form action="updateEvent.php" method="POST">
 		<label for="event-name">Event Name:</label>
-		<input type="text" name="event-name" id="event-name" value="<?php echo htmlspecialchars($result['eventName']) ?>"><br><br>
+		<input type="text" name="event-name" id="event-name" value="<?php echo htmlspecialchars($result['eventName']) ?>">
+		<br><br>
 
 		<label for="datetime-start">Starts:</label>
-		<input type="datetime-local" name="datetime-start" id="datetime-start" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['startTime'])) ?>"><br><br>
+		<input type="datetime-local" name="datetime-start" id="datetime-start" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['startTime'])) ?>">
+		<br><br>
 
 		<label for="datetime-end">Ends:</label>
-		<input type="datetime-local" name="datetime-end" id="datetime-end" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['endTime'])) ?>"><br><br>
+		<input type="datetime-local" name="datetime-end" id="datetime-end" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['endTime'])) ?>">
+		<br><br>
 
 		<label for="room">Room:</label>
-		<input type="text" name="room" id="room" value="<?php echo htmlspecialchars($result['location']) ?>"><br><br>
+		<input type="text" name="room" id="room" value="<?php echo htmlspecialchars($result['location']) ?>">
+		<br><br>
 
 		<label for="desc">Description:</label>
-		<textarea name="desc" id="desc"><?php echo $result['description'] ?></textarea><br><br>
+		<textarea name="desc" id="desc"><?php echo $result['description'] ?></textarea>
+		<br><br>
 
-		<input type="submit" value="Update event" class="button">
-		<input type="submit" value="Delete event" class="button"><br><br>
+		<input type="submit" name="action" value="Update event" class="button">
+		<input type="submit" name="action" value="Delete event" class="button">
+		<br><br>
 	</form>
 
 	<p id="message"></p>
