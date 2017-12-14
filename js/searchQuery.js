@@ -8,26 +8,29 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 		// radio buttons clicked
 		$('label[for=event]').click(function(){
 			selected = 'Event';
-			console.log(selected);
 			$('#event-radio').attr('checked', true);
 			$('#event-dropdown').show();
+			$('#user-radio').attr('checked', false);
 			$('#user-dropdown').hide();
+			$('#room-radio').attr('checked', false);
 			$('#room-dropdown').hide();
 		});
 		$('label[for=user]').click(function(){
 			selected = 'User';
-			console.log(selected);
 			$('#user-radio').attr('checked', true);
 			$('#user-dropdown').show();
+			$('#event-radio').attr('checked', false);
 			$('#event-dropdown').hide();
+			$('#room-radio').attr('checked', false);
 			$('#room-dropdown').hide();
 		});
 		$('label[for=room]').click(function(){
 			selected = 'Room';
-			console.log(selected);
 			$('#room-radio').attr('checked', true);
 			$('#room-dropdown').show();
+			$('#event-radio').attr('checked', false);
 			$('#event-dropdown').hide();
+			$('#user-radio').attr('checked', false);
 			$('#user-dropdown').hide();
 		});
 
