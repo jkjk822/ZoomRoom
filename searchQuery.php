@@ -23,9 +23,9 @@
 		$query = "%{$query}%";
 
 		# set up query and post it to database
-		$stmt = $conn->prepare("SELECT * FROM ? WHERE ? LIKE ?");
+		$stmt = $conn->prepare("SELECT * FROM $table WHERE $field LIKE ?");
  		if(!$stmt) return databaseError($conn->error);
-		$stmt->bind_param("sss", $table, $field, $query);
+		$stmt->bind_param("s", $query);
 		$stmt->execute();
 
 		#store result
