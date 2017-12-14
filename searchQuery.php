@@ -33,8 +33,8 @@
 		$results = array();
 		$i = 0;
 		while($row = $result->fetch_assoc()){
-			$results[i] = $row;
-			i++;
+			$results[$i] = $row;
+			$i++;
 		}
 
 		$stmt->close();
