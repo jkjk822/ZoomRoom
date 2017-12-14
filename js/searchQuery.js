@@ -67,12 +67,12 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 						for(var i = 0; i < data.results.length; i++){
 							$("#"+selected.toLowerCase()+"-table").append([
 							"<tr>",
-								"<td>"+results[i].eventName+"</td>",
-								"<td>"+results[i].startTime+"</td>",
-								"<td>"+results[i].endTime+"</td>",
-								"<td>"+results[i].location+"</td>",
-								"<td>"+results[i].host+"</td>",
-								"<td>"+results[i].type+"</td>",
+								"<td>"+data.results[i].eventName+"</td>",
+								"<td>"+data.results[i].startTime+"</td>",
+								"<td>"+data.results[i].endTime+"</td>",
+								"<td>"+data.results[i].location+"</td>",
+								"<td>"+data.results[i].host+"</td>",
+								"<td>"+data.results[i].type+"</td>",
 							"</tr>",
 							].join("\n")
 							);
