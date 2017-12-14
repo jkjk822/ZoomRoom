@@ -47,10 +47,10 @@
 		<input type="text" name="event-name" id="event-name" value="<?php echo htmlspecialchars($result['eventName']) ?>"><br><br>
 
 		<label for="datetime-start">Starts:</label>
-		<input type="datetime-local" name="datetime-start" id="datetime-start" value="<?php echo htmlspecialchars($result['startTime']) ?>"><br><br>
+		<input type="datetime-local" name="datetime-start" id="datetime-start" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['startTime'])) ?>"><br><br>
 
 		<label for="datetime-end">Ends:</label>
-		<input type="datetime-local" name="datetime-end" id="datetime-end" value="<?php echo htmlspecialchars($result['startEnd']) ?>"><br><br>
+		<input type="datetime-local" name="datetime-end" id="datetime-end" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['startEnd'])) ?>"><br><br>
 
 		<label for="room">Room:</label>
 		<input type="text" name="room" id="room" value="<?php echo htmlspecialchars($result['location']) ?>"><br><br>
@@ -62,12 +62,14 @@
 		<input type="submit" value="Delete event" class="button"><br><br>
 	</form>
 	
-	<div id="validate"></div>
+	<div id="message">
+
 <?php
 	} else{
 		echo "This is not your event to manage.";
 	}
 ?>
+	</div>
 
 	<footer>
 		<p>P1M4 by Johnny Jacobs (8) and Mcvvina Lin (22)</p>
