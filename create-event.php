@@ -1,5 +1,14 @@
 <!doctype html>
 
+<?php
+	# Redirect if not logged in
+	if(!$_COOKIE['loggedIn']){
+		# Redirect browser
+		header('Location: unauthorized.html'); 
+		exit();
+	}
+?>
+
 <html lang="en">
 
 <head>
@@ -18,10 +27,6 @@
 	<form action="addEvent.php" method="post">
 			<label for="name">Event Name:</label>
 			<input type="text" name="name" id="name" placeholder="Event name" required>
-		<br><br>
-			<label for="host">Host's NetID:</label>
-			<input type="text" name="host" id="host" placeholder="Host" required>
-			<span id="host-error" class="error"></span>
 		<br><br>
 			<label for="desc">Description:</label>
 			<textarea name="desc" id="desc" placeholder="Description"></textarea>

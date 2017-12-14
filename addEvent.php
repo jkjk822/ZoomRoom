@@ -19,17 +19,13 @@
 		}
 
 		$eventName = get_post($conn, 'name');
-		$host = get_post($conn, 'host');
 		$location = get_post($conn, 'room');
 		$description = get_post($conn, 'desc');
 		$startTime = get_post($conn, 'start');
 		$endTime = get_post($conn, 'end');
 
-		if(!isValid($conn, 'Room', 'roomID', $location)){
+		if(!isValid($conn, $location)){
 			$errors['room'] = "Invalid room";
-		}
-		if(!isValid($conn, 'User', 'netID', $host)){
-			$errors['host'] = "Invalid host";
 		}
 		if(!empty($errors)){
 			$data['errors'] = $errors;
@@ -41,7 +37,7 @@
 		# set up query and post it to database
 		$stmt = $conn->prepare("INSERT INTO Event VALUES(0, ?, ?, ?, ?, STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), 'Other');");
  		if(!$stmt) return databaseError($conn->error);
-		$stmt->bind_param("ssssss", $eventName, $host, $location, $description, $startTime, $endTime);
+		$stmt->bind_param("ssssss", $eventName, $_COOKIE["loggedIn"], $location, $description, $startTime, $endTime);
 		$stmt->execute();
 
 		if (!$stmt) {
@@ -65,10 +61,10 @@
 	}
 
 	# Check if in database
-    function isValid($database, $table, $fieldName, $fieldValue){
+    function isValid($database, $fieldValue){
 
         # set up query and post it to database
-        $stmt = $database->prepare("SELECT $fieldName FROM $table WHERE $fieldName = ?");
+        $stmt = $database->prepare("SELECT roomID FROM Room WHERE $fieldName = ?");
         if(!$stmt) return databaseError($database->error);
         $stmt->bind_param("s", $fieldValue);
         $stmt->execute();
