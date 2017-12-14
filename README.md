@@ -1,7 +1,5 @@
 # ZoomRoom
 
-
-
 ## Milestone 4
 
 ### TODO:
@@ -27,7 +25,7 @@
 
 Johnny:
 - Populate my events (done)
-- Populate/authenticate manage event 
+- Populate/authenticate manage event (done) 
 - Populate manage account (done)
 - Authenticate user (done)
 - Save event to database (done)
