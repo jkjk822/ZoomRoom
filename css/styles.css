@@ -66,13 +66,13 @@ tr:hover, figcaption:hover { background-color: white; }
 
 .navbar {
 	position: absolute;
-	display:block;
+	display: inline-block;
 	top: 0;
 	right: 20px;
 }
 
 .navbar-right {
-	padding: 0 4px 0;
+	padding: 5 10px 5;
 	background-color: white;
 }
 
@@ -83,12 +83,12 @@ nav ul {
 }
 
 nav ul li {
-	display: table-cell;
 	padding-left: 5px;
 	padding-right: 5px;
 }
 
 .navbar-text {
+	padding-right: 5px;
 	font-weight: bold;
 	color: blue;	
 }
@@ -122,7 +122,7 @@ nav ul li {
 /* ------------ Search bars ------------ */
 
 .search-bars {
-	background-color: #afeeee;
+	background-color: #dbf6ff;
 	left:0;
 	right: 0;
 	padding: 15px;
