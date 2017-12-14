@@ -135,7 +135,7 @@ nav ul li {
 /* ------------ Search bars ------------ */
 
 .search-bars {
-	background-color: #dbf6ff;
+	background-color: white;
 	left:0;
 	right: 0;
 	padding: 15px;
@@ -166,9 +166,7 @@ nav ul li {
 	box-shadow: 0 0 0 2px #008cba;
 }
 
-.search-bar-radio label:hover span {
-	background-color: #778899;
-}
+.search-bar-radio label:hover span { background-color: #778899; }
 
 .search-bar-radio input:checked + label span {
 	height: 17px;
