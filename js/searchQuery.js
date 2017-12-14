@@ -10,28 +10,37 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 			selected = 'Event';
 			$('#event-radio').prop('checked', true);
 			$('#event-dropdown').show();
+			$('#event-table').show();
 			$('#user-radio').prop('checked', false);
 			$('#user-dropdown').hide();
+			$('#user-table').hide();
 			$('#room-radio').prop('checked', false);
 			$('#room-dropdown').hide();
+			$('#room-table').hide();
 		});
 		$('label[for=user]').click(function(){
 			selected = 'User';
 			$('#user-radio').prop('checked', true);
 			$('#user-dropdown').show();
+			$('#user-table').show();
 			$('#event-radio').prop('checked', false);
 			$('#event-dropdown').hide();
+			$('#event-table').hide();
 			$('#room-radio').prop('checked', false);
 			$('#room-dropdown').hide();
+			$('#room-table').hide();
 		});
 		$('label[for=room]').click(function(){
 			selected = 'Room';
 			$('#room-radio').prop('checked', true);
 			$('#room-dropdown').show();
+			$('#room-table').show();
 			$('#event-radio').prop('checked', false);
 			$('#event-dropdown').hide();
+			$('#event-table').hide();
 			$('#user-radio').prop('checked', false);
 			$('#user-dropdown').hide();
+			$('#user-table').hide();
 		});
 
 
@@ -65,17 +74,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 
 					if(data.results){
 						for(var i = 0; i < data.results.length; i++){
-							$("#"+selected.toLowerCase()+"-table").append([
-							"<tr>",
-								"<td>"+data.results[i].eventName+"</td>",
-								"<td>"+data.results[i].startTime+"</td>",
-								"<td>"+data.results[i].endTime+"</td>",
-								"<td>"+data.results[i].location+"</td>",
-								"<td>"+data.results[i].host+"</td>",
-								"<td>"+data.results[i].type+"</td>",
-							"</tr>",
-							].join("\n")
-							);
+							$("#"+selected.toLowerCase()+"-table").append(getEntryHTML(seelcted, data.results[i]));
 						}
 					}
 					
@@ -83,3 +82,39 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 		});
 
 });
+
+
+function getEntryHTML(type, entry){
+	if(type === 'Event'){
+		return [
+		"<tr>",
+			"<td>"+entry.eventName+"</td>",
+			"<td>"+entry.startTime+"</td>",
+			"<td>"+entry.endTime+"</td>",
+			"<td>"+entry.location+"</td>",
+			"<td>"+entry.host+"</td>",
+			"<td>"+entry.description+"</td>",
+			"<td>"+entry.type+"</td>",
+		"</tr>",
+		].join("\n");
+	}else if(type === 'User'){
+		return [
+		"<tr>",
+			"<td>"+entry.netID+"</td>",
+			"<td>"+entry.firstName+"</td>",
+			"<td>"+entry.lastName+"</td>",
+			"<td>"+entry.email+"</td>",
+			"<td>"+entry.phone+"</td>",
+			"<td>"+entry.office+"</td>",
+		"</tr>",
+		].join("\n")
+	}else if(type === 'Room'){
+		return [
+		"<tr>",
+			"<td>"+entry.building+"</td>",
+			"<td>"+entry.number+"</td>",
+			"<td>"+entry.description+"</td>",
+		"</tr>",
+		].join("\n")
+	}
+}

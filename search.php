@@ -80,8 +80,10 @@
 	<table id="user-table">
 		<tr>
 			<th>User</th>
-			<th>Phone Number</th>
+			<th>First Name</th>
+			<th>Last Name</th>
 			<th>Email</th>
+			<th>Phone Number</th>
 			<th>Office</th>
 		</tr>
 	</table>
@@ -89,7 +91,8 @@
 	<table id="room-table">
 		<tr>
 			<th>Building</th>
-			<th>Room Number</th>
+			<th>Number</th>
+			<th>Description</th>
 		</tr>
 	</table>
 
