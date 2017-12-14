@@ -13,14 +13,14 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 			$('#user-dropdown').hide();
 			$('#room-dropdown').hide();
 		});
-		($('#user-radio').click(function(){
+		$('#user-radio').click(function(){
 			selected = 'User';
 			console.log(selected);
 			this.show();
 			$('#event-dropdown').hide();
 			$('#room-dropdown').hide();
 		});
-		($('#room-radio').click(function(){
+		$('#room-radio').click(function(){
 			selected = 'Room';
 			console.log(selected);
 			this.show();
