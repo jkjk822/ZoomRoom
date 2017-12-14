@@ -50,7 +50,7 @@
 		<input type="datetime-local" name="datetime-start" id="datetime-start" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['startTime'])) ?>"><br><br>
 
 		<label for="datetime-end">Ends:</label>
-		<input type="datetime-local" name="datetime-end" id="datetime-end" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['startEnd'])) ?>"><br><br>
+		<input type="datetime-local" name="datetime-end" id="datetime-end" value="<?php echo htmlspecialchars(str_replace(" ","T",$result['endTime'])) ?>"><br><br>
 
 		<label for="room">Room:</label>
 		<input type="text" name="room" id="room" value="<?php echo htmlspecialchars($result['location']) ?>"><br><br>
