@@ -44,7 +44,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 			// get data from form
 			var formData = $(this).serialize();
 			formData += "&table="+selected; // add selected table
-			formData += "&field="+$("#"+selected.toLowerCase()+"-dropdown :selected").text(); // add selected field
+			formData += "&field="+$("#"+selected.toLowerCase()+"-dropdown :selected").val(); // add selected field
 
 			// post to location designated in form
 			var postURL = $(this).attr('action');

@@ -35,28 +35,27 @@
 				<a>Search by:</a>
 
 				<select id="event-dropdown">
-					<option value="event-name">Name</option>
-					<option value="event-starts">Starts</option>
-					<option value="event-ends">Ends</option>
-					<option value="event-room">Room</option>
-					<option value="event-host">Host</option>
-					<option value="event-type">Type</option>
-					<option value="event-id">Event ID</option>
+					<option value="eventName">Name</option>
+					<option value="startTime">Starts</option>
+					<option value="endTime">Ends</option>
+					<option value="location">Room</option>
+					<option value="host">Host</option>
+					<option value="type">Type</option>
+					<option value="eventID">Event ID</option>
 				</select>
 
 				<select id="user-dropdown">
-					<option value="user-name">Name</option>
-					<option value="user-department">Department</option>
-					<option value="user-office">Office</option>
-					<option value="user-phone">Phone Number</option>
-					<option value="user-email">Email</option>
-					<option value="user-netid">netID</option>
+					<option value="firstName">First Name</option>
+					<option value="lastName">Last Name</option>
+					<option value="office">Office</option>
+					<option value="phone">Phone Number</option>
+					<option value="email">Email</option>
+					<option value="netID">netID</option>
 				</select>
 
 				<select id="room-dropdown">
-					<option value="room-building">Building</option>
-					<option value="room-capacity">Capacity</option>
-					<option value="room-id">Room ID</option>
+					<option value="building">Building</option>
+					<option value="roomID">Room ID</option>
 				</select>
 
 				<input type="search" name="user-input">
