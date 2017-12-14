@@ -8,6 +8,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 		// radio buttons clicked
 		$('#event-radio').click(function(){
 			selected = 'Event';
+			console.log(selected);
 			$(this).attr('checked', true);
 			$('#event-dropdown').show();
 			$('#user-dropdown').hide();
@@ -15,6 +16,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 		});
 		$('#user-radio').click(function(){
 			selected = 'User';
+			console.log(selected);
 			$(this).attr('checked', true);
 			$('#user-dropdown').show();
 			$('#event-dropdown').hide();
@@ -22,6 +24,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 		});
 		$('#room-radio').click(function(){
 			selected = 'Room';
+			console.log(selected);
 			$(this).attr('checked', true);
 			$('#room-dropdown').show();
 			$('#event-dropdown').hide();
