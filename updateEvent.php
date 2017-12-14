@@ -2,12 +2,12 @@
 	
 	# main
 	if ($_POST['action'] == 'Update event') {
-		updateEvent();
+		updateEvent($_POST['eventID']);
 	} else if ($_POST['action'] == 'Delete event') {
-	    deleteEvent();
+	    deleteEvent($_POST['eventID']);
 	}
 
-	function updateEvent(){
+	function updateEvent($event){
 
 		require_once('db_setup.php');
 		$sql = "USE jjaco16;";
@@ -23,7 +23,7 @@
 
 		$stmt = $conn->prepare("UPDATE Event SET eventName = ?, location = ?, description = ?, startTime = STR_TO_DATE(?, '%Y-%m-%dT%H:%i'), endTime = STR_TO_DATE(?, '%Y-%m-%dT%H:%i') WHERE eventID = ?;");
  		if(!$stmt) die($conn->error);
-		$stmt->bind_param("sssss", $eventName, $location, $description, $startTime, $endTime, $_GET['event']);
+		$stmt->bind_param("sssss", $eventName, $location, $description, $startTime, $endTime, $event);
 		$stmt->execute();
 
 		if (!$stmt) {
@@ -33,7 +33,7 @@
 		$conn->close();
 	}
 
-	function deleteEvent(){
+	function deleteEvent($event){
 
 		require_once('db_setup.php');
 		$sql = "USE jjaco16;";
@@ -43,7 +43,7 @@
 
 		$stmt = $conn->prepare("DELETE FROM Event WHERE eventID = ?;");
  		if(!$stmt) die($conn->error);
-		$stmt->bind_param("s", $_GET['event']);
+		$stmt->bind_param("s", $event);
 		$stmt->execute();
 
 		$stmt->close();
