@@ -30,7 +30,7 @@
 <html lang="en">
 
 <head>
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="../css/styles.css">
 	<meta charset="utf-8">
 	<title>Zoom Room - Manage Event</title>
 </head>
@@ -42,7 +42,9 @@
 <?php
 	if($result['host'] === $_COOKIE['loggedIn']){
 ?>
-	<form action="updateEvent.php" method="POST">
+	<form action="../updateEvent.php" method="POST">
+		<input type="hidden" name="eventID" value="<?php echo htmlspecialchars($_GET['event']) ?>">
+
 		<label for="event-name">Event Name:</label>
 		<input type="text" name="event-name" id="event-name" value="<?php echo htmlspecialchars($result['eventName']) ?>">
 		<br><br>
