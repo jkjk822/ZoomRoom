@@ -1,26 +1,33 @@
 $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitting-ajax-forms-with-jquery
 
 		var selected = 'Event';
+		$('#event-dropdown').show();
+		$('#user-dropdown').hide();
+		$('#room-dropdown').hide();
 
-		// radio button clicked
-		$('.search-bar-radio').click(function(){
-			if($('#event-radio').is(':checked')){
-				selected = 'Event';
-				$('#event-dropdown').show();
-				$('#user-dropdown').hide();
-				$('#room-dropdown').hide();
-			} else if($('#user-radio').is(':checked')){
-				selected = 'User';
-				$('#event-dropdown').hide();
-				$('#user-dropdown').show();
-				$('#room-dropdown').hide();
-			} else if($('#room-radio').is(':checked')){
-				selected = 'Room';
-				$('#event-dropdown').hide();
-				$('#user-dropdown').hide();
-				$('#room-dropdown').show();
-			}
+		// radio buttons clicked
+		$('#event-radio').click(function(){
+			selected = 'Event';
+			console.log(selected);
+			this.show();
+			$('#user-dropdown').hide();
+			$('#room-dropdown').hide();
 		});
+		($('#user-radio').click(function(){
+			selected = 'User';
+			console.log(selected);
+			this.show();
+			$('#event-dropdown').hide();
+			$('#room-dropdown').hide();
+		});
+		($('#room-radio').click(function(){
+			selected = 'Room';
+			console.log(selected);
+			this.show();
+			$('#event-dropdown').hide();
+			$('#user-dropdown').hide();
+		});
+
 
 		// process the form
 		$('form').submit(function(event) {
