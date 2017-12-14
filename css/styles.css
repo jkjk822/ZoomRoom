@@ -72,7 +72,8 @@ tr:hover, figcaption:hover { background-color: white; }
 }
 
 .navbar-right {
-	padding: 5px 10px 5px;
+	display: inline-block;
+	padding: 5px;
 	background-color: white;
 }
 
@@ -91,6 +92,18 @@ nav ul li {
 	padding-right: 5px;
 	font-weight: bold;
 	color: blue;	
+}
+
+.navbar-links {
+	text-decoration: none;
+	color: black;
+	padding: 5px 10px;
+	border: 1px solid black;
+}
+
+.navbar-links:hover {
+	color: white;
+	background-color: #008cba;
 }
 
 /* ------------ Warning box ------------ */
