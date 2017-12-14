@@ -2,8 +2,11 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 
 		var selected = 'Event';
 		$('#event-dropdown').show();
+		$('#event-table').show();
 		$('#user-dropdown').hide();
+		$('#user-table').hide();
 		$('#room-dropdown').hide();
+		$('#room-table').hide();
 
 		// radio buttons clicked
 		$('label[for=event]').click(function(){
@@ -74,7 +77,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 
 					if(data.results){
 						for(var i = 0; i < data.results.length; i++){
-							$("#"+selected.toLowerCase()+"-table").append(getEntryHTML(seelcted, data.results[i]));
+							$("#"+selected.toLowerCase()+"-table").append(getEntryHTML(selected, data.results[i]));
 						}
 					}
 					
