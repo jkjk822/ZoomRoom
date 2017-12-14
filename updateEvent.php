@@ -6,6 +6,8 @@
 	} else if ($_POST['action'] == 'Delete event') {
 	    deleteEvent($_POST['eventID']);
 	}
+	header('Location: my-events.php'); 
+	exit();
 
 	function updateEvent($event){
 
