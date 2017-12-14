@@ -49,6 +49,8 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 
 		// process the form
 		$('form').submit(function(event) {
+
+			$(".results").remove();
  
 			// stop the form from submitting the normal way and refreshing the page
 			event.preventDefault();
@@ -90,7 +92,7 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 function getEntryHTML(type, entry){
 	if(type === 'Event'){
 		return [
-		"<tr>",
+		"<tr class='results'>",
 			"<td>"+entry.eventName+"</td>",
 			"<td>"+entry.startTime+"</td>",
 			"<td>"+entry.endTime+"</td>",
@@ -102,7 +104,7 @@ function getEntryHTML(type, entry){
 		].join("\n");
 	}else if(type === 'User'){
 		return [
-		"<tr>",
+		"<tr class='results'>",
 			"<td>"+entry.netID+"</td>",
 			"<td>"+entry.firstName+"</td>",
 			"<td>"+entry.lastName+"</td>",
@@ -113,7 +115,7 @@ function getEntryHTML(type, entry){
 		].join("\n")
 	}else if(type === 'Room'){
 		return [
-		"<tr>",
+		"<tr class='results'>",
 			"<td>"+entry.building+"</td>",
 			"<td>"+entry.number+"</td>",
 			"<td>"+entry.description+"</td>",
