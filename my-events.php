@@ -1,7 +1,7 @@
 <!doctype html>
 
 <?php	
-	# Redirect to login page if not logged in
+	# Redirect if not logged in
 	if(!$_COOKIE['loggedIn']){
 		# Redirect browser
 		header('Location: unauthorized.html'); 
