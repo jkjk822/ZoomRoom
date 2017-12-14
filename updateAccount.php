@@ -30,6 +30,7 @@
 		if(!empty($_POST['office'])){
 			$data['office'] = updateOffice($conn, get_post($conn, 'office'));
 		}
+		$conn->close();
 		return $data;
 	}
 
