@@ -6,21 +6,21 @@ $(document).ready(function() { // ideas from https://scotch.io/tutorials/submitt
 		$('#room-dropdown').hide();
 
 		// radio buttons clicked
-		$('#event-radio').click(function(){
+		$('label[for=event']).click(function(){
 			selected = 'Event';
 			console.log(selected);
 			this.show();
 			$('#user-dropdown').hide();
 			$('#room-dropdown').hide();
 		});
-		$('#user-radio').click(function(){
+		$('label[for=user']).click(function(){
 			selected = 'User';
 			console.log(selected);
 			this.show();
 			$('#event-dropdown').hide();
 			$('#room-dropdown').hide();
 		});
-		$('#room-radio').click(function(){
+		$('label[for=room']).click(function(){
 			selected = 'Room';
 			console.log(selected);
 			this.show();
