@@ -2,9 +2,9 @@
 	
 	# main
 	if ($_POST['action'] == 'Update event') {
-		updateEvent(get_post($conn, 'eventID'));
+		updateEvent($_POST['eventID']);
 	} else if ($_POST['action'] == 'Delete event') {
-	    deleteEvent(get_post($conn, 'eventID'));
+	    deleteEvent($_POST['eventID']);
 	}
 
 	function updateEvent($event){
